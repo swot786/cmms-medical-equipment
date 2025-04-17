@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CMMS Medical Equipment</title>
+    <link rel="stylesheet" href="stylesd.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <header id="header-container">
+      <div id="page-links-container" class="links-container-div">
+        <button id="add">Add Equipment</button>
+        <button id="export-to-excel">
+          Export To Excel <img src="/images/page_excel.png" alt="excel image" />
+        </button>
+        <a href="http://" class="nav-links">History</a
+        ><a href="http://" class="nav-links">Support</a
+        ><a href="http://" class="nav-links">Settings</a>
+        <a href="http://" class="nav-links">Service Plan</a>
+        <button id="home">Summary</button>
+      </div>
+    </header>
+    <div id="home-land">
+      <div class="filter-container">
+        <h2>Filter By:</h2>
+        <label class="filter-label" for="filter-equipment-name"
+          >Equipment Name</label
+        >
+        <input
+          type="checkbox"
+          name="filter-equipment-name"
+          id="filter-equipment-name"
+          class="filter-choice"
+        />
+        <label class="filter-label" for="filter-location">Location</label>
+        <input
+          type="checkbox"
+          name="filter-location"
+          id="filter-location"
+          class="filter-choice"
+        />
+        <label class="filter-label" for="filter-service-type"
+          >Service Type</label
+        >
+        <input
+          type="checkbox"
+          name="filter-service-type"
+          id="filter-service-type"
+          class="filter-choice"
+        />
+        <label class="filter-label" for="filter-status">Status</label>
+        <input
+          type="checkbox"
+          name="filter-status"
+          id="filter-status"
+          class="filter-choice"
+        />
+      </div>
+      <div id="summary-container">
+        <div id="status-count" class="summary-divs">
+          <p><u>Status Count</u></p>
+          <p>Okay: <span id="okay">0</span></p>
+          <p>Non Functional: <span id="non-functional">0</span></p>
+          <p>Absolute: <span id="absolute">0</span></p>
+        </div>
+        <div id="equipment-count" class="summary-divs"></div>
+        <div id="service-type-count" class="summary-divs">3</div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="search-input-container">
+        <input
+          type="search"
+          name="search"
+          id="search"
+          placeholder="Search Inventory.."
+        />
+        <button id="search-btn" type="button">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+      <!-- <div class="content-container"></div> -->
+      <dialog id="dialog">
+        <button id="close-dialog-btn" class="close-dialog" type="button">
+          X
+        </button>
+        <div>
+          <form id="form">
+            <h2>Date</h2>
+            <input
+              type="date"
+              name="date"
+              id="date"
+              placeholder="e.g 2025-04-12"
+              required
+            />
+            <h2>Equipment Name</h2>
+            <input
+              type="text"
+              name="equipmentName"
+              id="equipment-name"
+              placeholder="e.g Suction Machine"
+              required
+            />
+            <h2>Location</h2>
+            <input
+              type="text"
+              name="location"
+              id="location"
+              placeholder="e.g Maternity"
+              required
+            />
+            <h2>Service Type</h2>
+            <input
+              type="text"
+              name="serviceType"
+              id="service-type"
+              placeholder="e.g Repair"
+              required
+            />
+            <h2>Status</h2>
+            <input
+              type="text"
+              name="status"
+              id="status"
+              placeholder="e.g Okay"
+              required
+            />
+            <button id="submit" type="submit">Add</button>
+            <button id="update" type="button">Update</button>
+          </form>
+        </div>
+      </dialog>
+    </div>
+    <div id="equipment-container">
+      <!-- <table>
+        <tbody>
+          <tr id="headings">
+            <th class="th-headings">Date</th>
+            <th class="th-headings">Equipment Name</th>
+            <th class="th-headings">Service Type</th>
+            <th class="th-headings">Status</th>
+            <th class="th-headings">Action</th>
+          </tr>
+        </tbody>
+      </table> -->
+      <!-- <section class="modal hidden">
+        <p class="warning-mesaage">Are you SURE you want to <strong class="delete-word">DELETE</strong>  this Entry?</p>
+        <div>
+          <button type="button" id="okay-btn">Okay</button><button type="button" id="cancel-btn">Cancel</button>
+        </div>
+      </section> -->
+      <!-- <button class="btn btn-open">Open Modal</button> -->
+      <table id="equipment-table">
+        <thead id="thead">
+          <tr id="headings">
+            <th class="th-headings">Date</th>
+            <th class="th-headings">Equipment Name</th>
+            <th class="th-headings">Location</th>
+            <th class="th-headings">Service Type</th>
+            <th class="th-headings">Status</th>
+            <th class="th-headings">Action</th>
+          </tr>
+        </thead>
+        <tbody id="t-body"></tbody>
+      </table>
+    </div>
+    <script src="table2excel.js"></script>
+    <script src="scriptd.js"></script>
+  </body>
+</html>

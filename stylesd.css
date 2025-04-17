@@ -1,0 +1,323 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #010123;
+}
+
+header {
+  max-width: 900px;
+  margin: 0 auto;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+div#home-land {
+  position: absolute;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  background-color: #020223;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.filter-container {
+  color: whitesmoke;
+  position: absolute;
+  top: 40px;
+  margin-left: -50px;
+  /* line-height: 15px; */
+}
+
+.filter-label {
+  /* border: 1px solid; */
+  font-weight: 600;
+  vertical-align: -webkit-baseline-middle;
+}
+
+.filter-choice {
+  width: 20px;
+  height: 20px;
+  vertical-align: text-top;
+}
+
+div#summary-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.summary-divs {
+  height: 10rem;
+  width: 10rem;
+  transition: transform 1.25s;
+  border-radius: 10px;
+  background-color: rgb(56, 12, 97);
+  font-weight: 600;
+  padding-left: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  /* text-align: center; */
+  border: none;
+  color: whitesmoke;
+}
+
+.summary-divs:hover {
+  transform: scale(1.25);
+}
+
+.search-input-container {
+  display: flex;
+  max-width: 400px;
+}
+
+.search-input-container button {
+  width: 100px;
+  height: 37px;
+  border: none;
+  background-color: rgb(71, 71, 247);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+}
+
+.search-input-container button:hover {
+  background-color: rgb(132, 132, 247);
+}
+
+.search-input-container input {
+  border: none;
+  border-bottom: 0.01px solid rgb(255, 202, 56);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background: none;
+  color: whitesmoke;
+}
+
+.search-input-container input::placeholder {
+  color: rgb(199, 196, 196);
+}
+
+.search-input-container input:focus {
+  border-top: none;
+  outline-style: inset;
+  color: whitesmoke;
+}
+
+.container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  border: 0.01px solid rgb(255, 202, 56);
+  /* Refactor code below!!! */
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.modal {
+  padding: 5px;
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  box-shadow: 0px 1.25px 1.5px 1.5px goldenrod;
+  min-height: 100px;
+  background-color: #010124;
+  color: whitesmoke;
+  border-radius: 5px;
+}
+
+.modal div {
+  display: flex;
+  column-gap: 50px;
+  justify-content: space-between;
+}
+
+.modal div > button {
+  background-color: rgb(230, 169, 15);
+  border: none;
+  padding: 5px;
+  width: 100px;
+  border-radius: 4px;
+  font-weight: 600;
+  box-shadow: 1.5px 1.5px 0 0 grey;
+  cursor: pointer;
+}
+
+.modal div > button:hover {
+  box-shadow: 2px 2px 0 0 grey;
+  transform: scale(1.125);
+}
+
+.hidden {
+  display: none;
+}
+
+.delete-word {
+  color: red;
+}
+
+#thead {
+  height: 40px;
+}
+
+#close-dialog-btn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: unset;
+  background-color: unset;
+  color: rgb(243, 7, 7);
+  cursor: pointer;
+}
+
+.links-container-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: inline-block;
+  text-decoration: none;
+  background-color: none;
+  text-align: center;
+  align-items: baseline;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.nav-links:hover {
+  background-color: rgb(134, 134, 240);
+  color: black;
+}
+
+div#equipment-container {
+  max-width: 900px;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0 auto;
+}
+
+dialog {
+  border-radius: 10px;
+  min-width: 350px;
+}
+
+button {
+  width: 100%;
+  padding: 5px;
+}
+
+#add,
+#export-to-excel, #home {
+  width: unset;
+  width: 100px;
+  background-color: green;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#add:hover,
+#export-to-excel:hover {
+  color: whitesmoke;
+}
+
+dialog button {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: green;
+  font-weight: 600;
+  font-size: 1.25em;
+}
+
+dialog button:hover {
+  color: whitesmoke;
+}
+
+.content-container {
+  display: none;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+input:last-of-type {
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+}
+
+.th-headings {
+  border: none;
+  border-right: 1px solid;
+  border-radius: 5px;
+  background-color: rgb(17, 10, 82);
+  color: rgb(228, 138, 21);
+}
+
+.action-cell {
+  display: flex;
+  flex-direction: row;
+  padding: 2px 0 2px 0;
+  column-gap: 3px;
+}
+
+.action-btn {
+  background: none;
+  padding: 5px 0 5px 0;
+  font-size: 10px;
+  color: whitesmoke;
+  font-weight: 600;
+  border: none;
+  height: auto;
+}
+
+.action-btn:hover {
+  background-color: rgb(3, 173, 3);
+  box-shadow: 0px 0px 1.5px 1.5px green;
+}
+
+.action-btn:last-of-type:hover {
+  background-color: rgb(221, 4, 4);
+  box-shadow: 0px 0px 1.5px 1.5px rgb(221, 4, 4);
+}
+
+.equipment-data-cell {
+  border-bottom: 1px solid rgb(228, 138, 21);
+  border-radius: 5px;
+  background-color: none;
+  color: whitesmoke;
+  padding-left: 1px;
+  /* overflow: auto; */
+}
+
+.equipment-data-cell:last-of-type {
+  padding-left: unset;
+}
+
+button#update {
+  display: none;
+}
