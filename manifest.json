@@ -2,7 +2,7 @@
   "name": "CMMS Medical Equipment",
   "short_name": "CMMS",
   "description": "A progressive web app for managing medical equipment.",
-  "start_url": "/index.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#010123",
   "theme_color": "#010123",
