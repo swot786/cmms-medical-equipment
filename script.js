@@ -98,18 +98,21 @@ const generateHTMLfromObject = (arr) => {
 
 const addEquipmentObjectToArray = () => {
   const object = generateEquipmentObject();
-  if (!localStorage.length) {
-    localStorage.setItem(`equipmentArray`, JSON.stringify([object]));
-    const LocalStorageArr = JSON.parse(localStorage.getItem(`equipmentArray`));
-    generateHTMLfromObject(LocalStorageArr);
-  } else {
-    const LocalStorageArr = JSON.parse(localStorage.getItem(`equipmentArray`));
-    // LocalStorageArr.push(object);
-    LocalStorageArr.unshift(object);
-    localStorage.setItem(`equipmentArray`, JSON.stringify(LocalStorageArr));
-    const LocalStorageArr2 = JSON.parse(localStorage.getItem(`equipmentArray`));
-    generateHTMLfromObject(LocalStorageArr2);
+
+  for (const key in localStorage) {
+    if (key === `equipmentArray`) {
+      const LocalStorageArr = JSON.parse(localStorage.getItem(key));
+      LocalStorageArr.unshift(object);
+      localStorage.setItem(key, JSON.stringify(LocalStorageArr));
+      const LocalStorageArr2 = JSON.parse(localStorage.getItem(key));
+      generateHTMLfromObject(LocalStorageArr2);
+      return;
+    }
   }
+
+  localStorage.setItem(`equipmentArray`, JSON.stringify([object]));
+  const LocalStorageArr = JSON.parse(localStorage.getItem(`equipmentArray`));
+  generateHTMLfromObject(LocalStorageArr);
 };
 
 const showEquipmentToUpdate = (updateBtn) => {
