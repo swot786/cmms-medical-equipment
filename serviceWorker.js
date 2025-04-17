@@ -1,11 +1,11 @@
 const cmmsMedicalEquipment = "cmms-medical-equipment-site-v1"
 const assets = [
   "/",
-  "./index.html",
-  "./styles.css",
-  "./script.js",
-  "./table2excel.js",
-  "./images/page_excel.png"
+  "/index.html",
+  "/styles.css",
+  "/script.js",
+  "/table2excel.js",
+  "/images/page_excel.png"
 ]
 
 self.addEventListener("install", installEvent => {
